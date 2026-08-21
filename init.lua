@@ -94,6 +94,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- toggle line wrap
+vim.keymap.set("n", "<leader>r", function()
+  vim.wo.wrap = not vim.wo.wrap
+end, { desc = "Toggle line wrap" })
+
 -- restore cursor to file position in previous editing session
 vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function(args)
@@ -179,11 +184,11 @@ vim.pack.add({
   { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
   { src = "https://github.com/mason-org/mason.nvim" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
-  { src = "https://github.com/stevearc/quicker.nvim" },
+  -- { src = "https://github.com/stevearc/quicker.nvim" },
   { src = "https://github.com/nvim-telescope/telescope.nvim" },
   { src = "https://github.com/kylechui/nvim-surround" },
   { src = "https://github.com/folke/lazy.nvim" },
-  { src = "https://github.com/coder/claudecode.nvim" },
+  -- { src = "https://github.com/coder/claudecode.nvim" },
   {
     src = "https://github.com/windwp/nvim-autopairs",
     data = {
@@ -205,11 +210,11 @@ require("plugins.blink")
 require("plugins.mason")
 require("plugins.mason-lspconfig")
 require("plugins.gitsigns")
-require("plugins.quicker")
+-- require("plugins.quicker")
 require("plugins.telescope")
 require("plugins.nvim-surround")
 require("plugins.nvim-autopairs")
-require("plugins.claudecode")
+-- require("plugins.claudecode")
 
 -- nvchad ui
 for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
