@@ -42,7 +42,7 @@ vim.keymap.set("n", "<M-j>", ":cnext<CR>")
 vim.keymap.set("n", "<M-k>", ":cprev<CR>")
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>vi", ":edit $MYVIMRC<CR>")
-vim.keymap.set("n", "<leader>td", ":edit $HOME/todo.md<CR>")
+vim.keymap.set("n", "<leader>td", ":edit $HOME/.todo.md<CR>")
 
 -- options
 vim.opt.relativenumber = false
