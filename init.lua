@@ -64,7 +64,7 @@ vim.opt.winborder = "single"
 -- vim.opt.clipboard = "unnamedplus"
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
+vim.opt.undodir = vim.fn.expand("~/.nvim/undodir")
 vim.opt.undofile = true
 -- vim.opt.updatetime = 50
 vim.opt.showtabline = 0
@@ -84,6 +84,16 @@ vim.opt.iskeyword:append({ "-" })
 
 -- autocmds
 vim.api.nvim_create_user_command('PackUpdate', function() vim.pack.update() end, {})
+
+vim.api.nvim_create_user_command('PackDeleteAll', function()
+  local names = {}
+  for _, plugin in ipairs(vim.pack.get()) do
+    table.insert(names, plugin.spec.name)
+  end
+  if #names > 0 then
+    vim.pack.del(names, { force = true })
+  end
+end, {})
 
 -- highlight yank
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -184,11 +194,9 @@ vim.pack.add({
   { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
   { src = "https://github.com/mason-org/mason.nvim" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
-  -- { src = "https://github.com/stevearc/quicker.nvim" },
   { src = "https://github.com/nvim-telescope/telescope.nvim" },
   { src = "https://github.com/kylechui/nvim-surround" },
   { src = "https://github.com/folke/lazy.nvim" },
-  -- { src = "https://github.com/coder/claudecode.nvim" },
   {
     src = "https://github.com/windwp/nvim-autopairs",
     data = {
@@ -201,6 +209,8 @@ vim.pack.add({
       build = "cd app && ./install.sh",
     },
   },
+  -- { src = "https://github.com/stevearc/quicker.nvim" },
+  -- { src = "https://github.com/coder/claudecode.nvim" },
 })
 
 require("plugins.oil")
@@ -210,10 +220,10 @@ require("plugins.blink")
 require("plugins.mason")
 require("plugins.mason-lspconfig")
 require("plugins.gitsigns")
--- require("plugins.quicker")
 require("plugins.telescope")
 require("plugins.nvim-surround")
 require("plugins.nvim-autopairs")
+-- require("plugins.quicker")
 -- require("plugins.claudecode")
 
 -- nvchad ui
