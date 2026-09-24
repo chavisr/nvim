@@ -1,4 +1,4 @@
--- vim.pack build hook
+-- build hook
 local function run_build(spec, path)
   local build = spec.data and spec.data.build
   if not build then return end
@@ -29,7 +29,7 @@ vim.pack.add({
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
   { src = "https://github.com/nvchad/ui" },
   { src = "https://github.com/nvchad/base46" },
-  { src = "https://github.com/nvchad/volt" },
+  -- { src = "https://github.com/nvchad/volt" },
   { src = "https://github.com/saghen/blink.cmp", version = "v1" },
   { src = "https://github.com/rafamadriz/friendly-snippets", },
   { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
@@ -38,7 +38,7 @@ vim.pack.add({
   { src = "https://github.com/nvim-telescope/telescope.nvim" },
   { src = "https://github.com/kylechui/nvim-surround" },
   { src = "https://github.com/windwp/nvim-autopairs" },
-  { src = "https://github.com/folke/lazy.nvim" },
+  -- { src = "https://github.com/folke/lazy.nvim" },
   {
     src = "https://github.com/iamcco/markdown-preview.nvim",
     data = {
