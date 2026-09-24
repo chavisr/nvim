@@ -1,0 +1,36 @@
+vim.opt.relativenumber = false
+vim.opt.number = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.cursorline = true
+vim.opt.signcolumn = "yes"
+vim.opt.cursorcolumn = false
+-- vim.opt.colorcolumn = "100"
+vim.opt.termguicolors = true
+-- vim.opt.background = "dark"
+vim.opt.winborder = "single"
+-- vim.opt.clipboard = "unnamedplus"
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = vim.fn.expand("~/.nvim/undodir")
+vim.opt.undofile = true
+-- vim.opt.updatetime = 50
+vim.opt.showtabline = 0
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
+-- vim.opt.completeopt = "menuone,noinsert,noselect"
+-- vim.opt.wildmenu = false
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.wrap = false
+vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 8
+-- vim.opt.laststatus = 2
+vim.opt.showmode = false
+vim.opt.iskeyword:append({ "-" })
+-- vim.opt.iskeyword:append({ "-", "." })
