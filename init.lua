@@ -1,9 +1,9 @@
 -- config
-require("config.options")
-require("config.filetypes")
-require("config.keymaps")
-require("config.autocmds")
-require("config.packages")
+require("options")
+require("keymaps")
+require("autocmds")
+require("filetypes")
+require("packages")
 
 -- plugins; order matters
 require("plugins.nvchad-ui")
