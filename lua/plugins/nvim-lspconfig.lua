@@ -51,3 +51,12 @@ vim.diagnostic.config({
   },
 })
 
+vim.lsp.config("bashls", {
+  settings = {
+    bashIde = {
+      shfmt = {
+        caseIndent = true,
+      },
+    },
+  },
+})
