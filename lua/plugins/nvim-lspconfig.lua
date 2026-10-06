@@ -60,3 +60,14 @@ vim.lsp.config("bashls", {
     },
   },
 })
+
+vim.lsp.config('lua_ls', {
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Tell the language server that 'vim' is a valid global variable
+        globals = { 'vim' },
+      },
+    },
+  },
+})

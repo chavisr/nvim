@@ -9,10 +9,11 @@ M.base46 = {
   theme = "onedark",
   transparency = true,
 
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
-  -- },
+  hl_override = {
+    -- Comment = { italic = true },
+    -- ["@comment"] = { italic = true },
+    TbBufOn = { fg = "#abb2bf", bg = "#353b45" },
+  },
 }
 
 -- M.nvdash = { load_on_startup = true }
