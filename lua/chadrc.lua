@@ -12,7 +12,10 @@ M.base46 = {
   hl_override = {
     -- Comment = { italic = true },
     -- ["@comment"] = { italic = true },
-    TbBufOn = { fg = "#abb2bf", bg = "#2d3139" },
+    -- TbFill = { bg = "#2d3139" },
+    TbBufOff = { fg = "#abb2bf", bg = "#2d3139" },
+    TbBufOffClose = { bg = "#2d3139" },
+    TbBufOffModified = { bg = "#2d3139" },
     -- CursorLine = { bg = "#252931" },
   },
 }
