@@ -8,7 +8,8 @@ local function run_build(spec, path)
     text = true,
   }):wait()
   if result.code ~= 0 then
-    vim.notify(spec.name .. " build failed (exit " .. result.code .. "): " .. (result.stderr or ""), vim.log.levels.ERROR)
+    vim.notify(spec.name .. " build failed (exit " .. result.code .. "): " .. (result.stderr or ""), vim.log.levels
+      .ERROR)
   end
 end
 
@@ -30,7 +31,7 @@ vim.pack.add({
   { src = "https://github.com/nvchad/ui" },
   { src = "https://github.com/nvchad/base46" },
   -- { src = "https://github.com/nvchad/volt" },
-  { src = "https://github.com/saghen/blink.cmp", version = "v1" },
+  { src = "https://github.com/saghen/blink.cmp",              version = "v1" },
   { src = "https://github.com/rafamadriz/friendly-snippets", },
   { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
   { src = "https://github.com/mason-org/mason.nvim" },
@@ -39,12 +40,12 @@ vim.pack.add({
   { src = "https://github.com/kylechui/nvim-surround" },
   { src = "https://github.com/windwp/nvim-autopairs" },
   -- { src = "https://github.com/folke/lazy.nvim" },
-  {
-    src = "https://github.com/iamcco/markdown-preview.nvim",
-    data = {
-      build = "cd app && ./install.sh",
-    },
-  },
+  -- {
+  --   src = "https://github.com/iamcco/markdown-preview.nvim",
+  --   data = {
+  --     build = "cd app && ./install.sh",
+  --   },
+  -- },
   { src = "https://github.com/stevearc/quicker.nvim" },
 })
 
@@ -60,4 +61,4 @@ require("plugins.gitsigns")
 require("plugins.nvim-surround")
 require("plugins.nvim-autopairs")
 require("plugins.quicker")
-require("plugins.markdown-preview")
+-- require("plugins.markdown-preview")
