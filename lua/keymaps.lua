@@ -70,14 +70,8 @@ local function copy_ref(opts)
       "IncSearch",
       { start_line - 1, 0 },
       { end_line - 1, -1 },
-      { inclusive = true }
+      { inclusive = true, timeout = 150 }
     )
-
-    vim.defer_fn(function()
-      if vim.api.nvim_buf_is_valid(bufnr) then
-        vim.api.nvim_buf_clear_namespace(bufnr, ns, 0, -1)
-      end
-    end, 150)
 
     vim.cmd("normal! \27")
     vim.api.nvim_win_set_cursor(0, { start_line, 0 })
