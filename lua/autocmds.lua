@@ -13,14 +13,14 @@ vim.api.nvim_create_user_command('PackDeleteAll', function()
 end, {})
 
 -- preview the current file as Markdown without saving the buffer
-vim.api.nvim_create_user_command('Md', function()
+vim.api.nvim_create_user_command('MarkdownPreview', function()
   local path = vim.api.nvim_buf_get_name(0)
   if path == '' or vim.fn.filereadable(path) == 0 then
     vim.notify('No file on disk to preview', vim.log.levels.ERROR)
     return
   end
 
-  local job = vim.fn.jobstart({ vim.fn.expand('~/.script/md.sh'), path }, { detach = true })
+  local job = vim.fn.jobstart({ vim.fn.expand('~/.script/grip-once.sh'), path }, { detach = true })
   if job <= 0 then
     vim.notify('Could not start Markdown preview', vim.log.levels.ERROR)
   end
