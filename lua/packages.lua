@@ -47,6 +47,7 @@ vim.pack.add({
   { src = "https://github.com/stevearc/quicker.nvim" },
   -- { src = "https://github.com/nvchad/volt" },
   -- { src = "https://github.com/folke/lazy.nvim" },
+  -- { src = "https://github.com/OXY2DEV/markview.nvim" },
 })
 
 -- Startup plugin setup; order matters.

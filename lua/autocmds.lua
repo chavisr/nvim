@@ -12,21 +12,6 @@ vim.api.nvim_create_user_command('PackDeleteAll', function()
   end
 end, {})
 
--- preview the current file as Markdown without saving the buffer
--- vim.api.nvim_create_user_command('MarkdownPreview', function()
---   local path = vim.api.nvim_buf_get_name(0)
---   if path == '' or vim.fn.filereadable(path) == 0 then
---     vim.notify('No file on disk to preview', vim.log.levels.ERROR)
---     return
---   end
---
---   local job = vim.fn.jobstart({ vim.fn.expand('~/.script/grip-once.sh'), path }, { detach = true })
---   if job <= 0 then
---     vim.notify('Could not start Markdown preview', vim.log.levels.ERROR)
---   end
--- end, {})
--- vim.cmd([[cnoreabbrev <expr> md getcmdtype() ==# ':' && getcmdline() ==# 'md' ? 'Md' : 'md']])
-
 -- highlight yank
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
@@ -59,7 +44,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 
 -- no auto continue comments on new line
 vim.api.nvim_create_autocmd("FileType", {
-  group = vim.api.nvim_create_augroup("no_auto_comment", {}),
+  group = vim.api.nvim_create_augroup("no_auto_comment", { clear = true }),
   callback = function()
     vim.opt_local.formatoptions:remove({ "c", "r", "o" })
   end,
