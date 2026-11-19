@@ -38,16 +38,16 @@ vim.pack.add({
   { src = "https://github.com/nvim-telescope/telescope.nvim" },
   { src = "https://github.com/kylechui/nvim-surround" },
   { src = "https://github.com/windwp/nvim-autopairs" },
-  {
-    src = "https://github.com/iamcco/markdown-preview.nvim",
-    data = {
-      build = "cd app && ./install.sh",
-    },
-  },
+  -- {
+  --   src = "https://github.com/iamcco/markdown-preview.nvim",
+  --   data = {
+  --     build = "cd app && ./install.sh",
+  --   },
+  -- },
   { src = "https://github.com/stevearc/quicker.nvim" },
   -- { src = "https://github.com/nvchad/volt" },
   -- { src = "https://github.com/folke/lazy.nvim" },
-  -- { src = "https://github.com/OXY2DEV/markview.nvim" },
+  { src = "https://github.com/OXY2DEV/markview.nvim" },
 })
 
 -- Startup plugin setup; order matters.
@@ -62,4 +62,4 @@ require("plugins.gitsigns")
 require("plugins.nvim-surround")
 require("plugins.nvim-autopairs")
 require("plugins.quicker")
-require("plugins.markdown-preview")
+-- require("plugins.markdown-preview")

@@ -7,16 +7,25 @@ local M = {}
 
 M.base46 = {
   theme = "onedark",
-  transparency = true,
+  transparency = false,
 
   hl_override = {
-    -- Comment = { italic = true },
-    -- ["@comment"] = { italic = true },
-    -- TbFill = { bg = "#2d3139" },
-    TbBufOff = { fg = "#abb2bf", bg = "#2d3139" },
-    TbBufOffClose = { bg = "#2d3139" },
-    TbBufOffModified = { bg = "#2d3139" },
-    -- CursorLine = { bg = "#252931" },
+    -- statusline transparency only (same effect as base46.transparency = true)
+    StatusLine = { bg = "none" },
+    StatusLineNC = { bg = "none" },
+    St_gitIcons = { bg = "none" },
+    St_Lsp = { bg = "none" },
+    St_LspMsg = { bg = "none" },
+    St_lspError = { bg = "none" },
+    St_lspWarning = { bg = "none" },
+    St_LspHints = { bg = "none" },
+    St_LspInfo = { bg = "none" },
+
+    -- tab buffer
+    TbFill = { bg = "#1e222a" },
+    -- TbBufOff = { fg = "#abb2bf", bg = "#2d3139" },
+    -- TbBufOffClose = { bg = "#2d3139" },
+    -- TbBufOffModified = { bg = "#2d3139" },
   },
 }
 
